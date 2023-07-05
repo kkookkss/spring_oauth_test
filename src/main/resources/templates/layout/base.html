@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:replace="${title}">레이아웃 타이틀</title>
+</head>
+<body>
+
+<div th:replace="~{fragment/navigation :: navigation}"></div>
+
+<section th:replace="${content}" class="page-section" id="contact">
+    <p>레이아웃 컨텐츠</p>
+</section>
+
+
+<div th:replace="~{fragment/footer :: footer}"></div>
+<div th:replace="~{fragment/copyright :: copyright}"></div>
+<div th:replace="~{fragment/config :: config}"></div>
+
+</div>
+
+</body>
+</html>

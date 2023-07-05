@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Full Width Pics - Start Bootstrap Template</title>
+</head>
+<body>
+<button th:type="button" th:onclick="'location.href=\''+ @{/} + '\''">홈</button>
+<section class="py-5">
+    <div class="container my-5">
+        <form action="/users/new" method="post">
+            <div class="form-group">
+                <label for="email">이름</label>
+                <input type="text" id="email" name="email" placeholder="email을 입력하세요">
+            </div>
+            <button type="submit">등록</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

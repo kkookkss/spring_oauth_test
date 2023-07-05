@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <button th:type="button" th:onclick="'location.href=\''+ @{/} + '\''">홈</button>
+        <table th:border="1">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이메일</th>
+                <th>provider id</th>
+                <th>provider</th>
+                <th>삭제</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${users}">
+                <td th:align="center" th:text="${user.id}"></td>
+                <td th:align="center" th:text="${user.email}"></td>
+                <td th:align="center" th:text="${user.providerId}"></td>
+                <td th:align="center" th:text="${user.provider}"></td>
+                <td>
+                    <button
+                            th:type="button"
+                            th:onclick="'location.href=\''+ @{/users/{id}(id=${user.id})} + '\''"
+                    >삭제</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
